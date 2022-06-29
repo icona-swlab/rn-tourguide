@@ -155,7 +155,7 @@ const getMaxSegmentLength = memoize((shape: Shape) => {
 
 const getSplitPathSliceOne = memoize((path: SvgPath) => {
   const splitPath = splitPathString(path)
-  return splitPath.length > 1 ? splitPath.slice(1).join('') : path
+  return splitPath.length > 2 ? splitPath.slice(1).join('') : path
 })
 
 const getInterpolator = memoize(

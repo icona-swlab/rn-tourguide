@@ -59,10 +59,7 @@ export class SvgMask extends Component<Props, State> {
   constructor(props: Props) {
     super(props)
 
-    this.windowDimensions = Platform.select({
-      android: Dimensions.get('screen'),
-      default: Dimensions.get('window'),
-    })
+    this.windowDimensions = Platform.OS === 'android' ? Dimensions.get('screen') : Dimensions.get('window');
 
     this.firstPath = `M0,0H${this.windowDimensions.width}V${
       this.windowDimensions.height

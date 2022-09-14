@@ -40,8 +40,6 @@ interface State {
     position?: ValueXY;
     tooltipTranslateY: Animated.Value;
     opacity: Animated.Value;
-    width: number;
-    height: number;
 }
 interface Move {
     top: number;
@@ -86,7 +84,6 @@ export declare class Modal extends React.Component<ModalProps, State> {
     renderMask: () => JSX.Element;
     renderTooltip(): JSX.Element | null;
     renderNonInteractionPlaceholder(): JSX.Element | null;
-    onRootLayout: (event: LayoutChangeEvent) => void;
     render(): JSX.Element | null;
 }
 export {};

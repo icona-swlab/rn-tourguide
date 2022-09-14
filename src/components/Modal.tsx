@@ -57,8 +57,6 @@ interface State {
   position?: ValueXY
   tooltipTranslateY: Animated.Value
   opacity: Animated.Value
-  width: number,
-  height: number,
 }
 
 interface Move {
@@ -279,8 +277,6 @@ export class Modal extends React.Component<ModalProps, State> {
       borderRadius={this.props.borderRadius}
       dismissOnPress={this.props.dismissOnPress}
       stop={this.props.stop}
-      width={this.state.width}
-      height={this.state.height}
     />
   )
 
@@ -324,15 +320,6 @@ export class Modal extends React.Component<ModalProps, State> {
       style={[StyleSheet.absoluteFill, styles.nonInteractionPlaceholder]} /> : null
   }
 
-  onRootLayout = (event: LayoutChangeEvent) => {
-    const {height, width} = event.nativeEvent.layout;
-    this.setState({
-      width,
-      height,
-    })
-  }
-
-
   render() {
     const containerVisible = this.state.containerVisible || this.props.visible
     const contentVisible = this.state.layout && containerVisible
@@ -343,7 +330,6 @@ export class Modal extends React.Component<ModalProps, State> {
       <View
         style={[StyleSheet.absoluteFill, { backgroundColor: 'transparent' }, this.props.rootContainerStyle]}
         pointerEvents='box-none'
-        onLayout={this.onRootLayout}
       >
         <View
           style={styles.container}

@@ -14,8 +14,6 @@ interface Props {
     currentStep?: IStep;
     easing: (value: number) => number;
     stop: () => void;
-    width: number;
-    height: number;
 }
 interface State {
     size: ValueXY;

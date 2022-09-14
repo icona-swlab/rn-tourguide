@@ -21,7 +21,7 @@ const uri =
 // Add <TourGuideProvider/> at the root of you app!
 function App() {
   return (
-    <TourGuideProvider {...{ borderRadius: 16, androidStatusBarVisible: true }}>
+    <TourGuideProvider {...{ borderRadius: 16, androidStatusBarVisible: true, rootContainerStyle: { zIndex: 1 } }}>
       <AppContent />
     </TourGuideProvider>
   )

@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import {
   Animated,
-  Dimensions,
   Easing,
   LayoutChangeEvent,
   Platform,
@@ -28,6 +27,8 @@ interface Props {
   currentStep?: IStep
   easing: (value: number) => number
   stop: () => void
+  width: number
+  height: number
 }
 
 interface State {
@@ -59,7 +60,8 @@ export class SvgMask extends Component<Props, State> {
   constructor(props: Props) {
     super(props)
 
-    this.windowDimensions = Platform.OS === 'android' ? Dimensions.get('screen') : Dimensions.get('window');
+    // this.windowDimensions = Platform.OS === 'android' ? Dimensions.get('screen') : Dimensions.get('window');
+    this.windowDimensions = {width: this.props.width, height: this.props.height, scale: 0, fontScale: 0};
 
     this.firstPath = `M0,0H${this.windowDimensions.width}V${
       this.windowDimensions.height

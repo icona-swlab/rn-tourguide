@@ -19,6 +19,7 @@ const MAX_START_TRIES = 120
 export interface TourGuideProviderProps {
   tooltipComponent?: React.ComponentType<TooltipProps>
   tooltipStyle?: StyleProp<ViewStyle>
+  rootContainerStyle?: StyleProp<ViewStyle>
   labels?: Labels
   androidStatusBarVisible?: boolean
   startAtMount?: string | boolean
@@ -36,6 +37,7 @@ export interface TourGuideProviderProps {
 export const TourGuideProvider = ({
   children,
   wrapperStyle,
+  rootContainerStyle,
   labels,
   tooltipComponent,
   tooltipStyle,
@@ -269,6 +271,7 @@ export const TourGuideProvider = ({
             borderRadius,
             dismissOnPress,
             preventOutsideInteraction,
+            rootContainerStyle,
           }}
         />
       </TourGuideContext.Provider>

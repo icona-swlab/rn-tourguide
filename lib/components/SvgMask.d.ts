@@ -22,6 +22,7 @@ interface State {
     animation: Animated.Value;
     canvasSize: ValueXY;
     previousPath: string;
+    d: string;
 }
 export declare class SvgMask extends Component<Props, State> {
     static defaultProps: {
